@@ -1,0 +1,5 @@
+StudentWrapper(const std::string &id, const Student &student) {
+        this->id = id;
+        this->student = student;
+    }
+这段程序问题出在对const修饰的变量进行了赋值操作，而他们是不能直接被修改的，要想达到初始化目的，可以通过构造函数的初始化列表来进行初始化
