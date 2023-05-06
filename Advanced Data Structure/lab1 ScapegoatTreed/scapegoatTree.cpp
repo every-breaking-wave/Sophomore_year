@@ -101,69 +101,6 @@ void ScapegoatTree::remove(int key, goatNode *&node) {
 
 }
 
-/**
- * 一段有问题但是值得反思的代码
- */
-//void ScapegoatTree::Delete(int key)
-//{
-//    // TODO
-//    if(key == 21){
-//        cout<<1;
-//    }
-//    goatNode* node = root;
-//    while (node){
-//        if(key < node->key) node = node->left;
-//        else if(key > node->key)
-//            node = node->right;
-//        else if(key == node->key)
-//            break;
-//    }
-//    if(!node){
-//        return;
-//    }
-//    if((!node->left || !node->right) && node != root){  // 被删除结点有0，1个子节点且不为根
-//        if(node->parent->key > node->key){
-//            node->parent->left = node->left ? node->left : node->right;
-//        }
-//        else if(node->parent->key < node->key){
-//            node->parent->right = node->left ? node->left : node->right;
-//        }
-//    }
-//    else if(node == root && (!root->left) || (!node->right)){  // 若被删结点为根，且根只有0，1个子节点
-//        root = root->left ? root->left : root->right;
-//        if(root) root->parent = NULL;
-//    }
-//
-//    else if(node->left && node->right){   // 被删结点有2个子节点
-//        goatNode * rightMinNode = node->right;
-//        while (rightMinNode->left){
-//            rightMinNode = rightMinNode->left;
-//        }
-//        if(rightMinNode->right){
-//            if(rightMinNode->parent != node){
-//                rightMinNode->parent->left = rightMinNode->right;
-//                rightMinNode->right->parent = rightMinNode->parent;
-//            }
-//            else {
-//                rightMinNode->right->parent = rightMinNode->parent;
-//                rightMinNode->parent->right = rightMinNode->right;
-//            }
-//        }
-//        else {
-//            if(rightMinNode->parent != node){
-//                rightMinNode->parent->left = NULL;
-//            }
-//            else {
-//                rightMinNode->parent->right = NULL;
-//            }
-//        }
-//            node->key = rightMinNode->key;
-//    }
-//    if(getNodeNum(root) < maxNum * ALPHA){
-//        rebalance(root);  // 以根结点进行重构
-//        return;
-//    }
-//}
 
 
 int ScapegoatTree::getHeight() {
